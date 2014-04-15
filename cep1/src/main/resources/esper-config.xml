@@ -1,0 +1,79 @@
+<esper-configuration>
+
+	<!-- Sample configuration for an input/output adapter loader -->
+	<plugin-loader name="MyLoader"
+		class-name="com.espertech.esperio.SpringContextLoader">
+		<!-- SpringApplicationContext translates into Spring ClassPathXmlApplicationContext 
+			or FileSystemXmlApplicationContext. Only one app-context of a sort can be 
+			used. When both attributes are used classpath and file, classpath prevails -->
+		<init-arg name="classpath-app-context" value="jms-spring.xml" />
+		<init-arg name="file-app-context" value="jms-spring.xml" />
+	</plugin-loader>
+	<event-type name="PcapHeader">
+		<java-util-map>
+			<map-property name="timestampInNanos" class="long" />
+			<map-property name="wirelen1" class="long" />
+		</java-util-map>
+	</event-type>
+	<event-type name="DataLinkLayer">
+		<java-util-map>
+			<map-property name="index" class="long" />
+			<map-property name="ProtocolType1" class="string" />
+			<map-property name="destination" class="string" />
+			<map-property name="source" class="string" />
+			<map-property name="next" class="string" />
+		</java-util-map>
+	</event-type>
+	<event-type name="NetworkLayer">
+		<java-util-map>
+			<map-property name="ttl" class="long" />
+			<map-property name="destination" class="string" />
+			<map-property name="index" class="long" />
+			<map-property name="ProtocolType" class="string" />
+			<map-property name="next" class="long" />
+			<map-property name="tos" class="long" />
+			<map-property name="type" class="long" />
+			<map-property name="source" class="String" />
+			<map-property name="id" class="long" />
+		</java-util-map>
+	</event-type>
+	<event-type name="Tcp">
+		<java-util-map>
+			<map-property name="index" class="long" />
+			<map-property name="destination" class="long" />
+			<map-property name="source" class="long" />
+			<map-property name="ack" class="long" />
+			<map-property name="seq" class="long" />
+			<map-property name="flags" class="java.util.Set" />
+		</java-util-map>
+	</event-type>
+	<event-type name="cep.tcp.connection.established">
+		<java-util-map>
+			<map-property name="timestamp" class="long" />
+			<map-property name="destination" class="string" />
+			<map-property name="source" class="string" />
+			<map-property name="sourcePort" class="long" />
+			<map-property name="destinationPort" class="long" />
+		</java-util-map>
+	</event-type>
+	<event-type name="cep.tcp.connection.finished">
+		<java-util-map>
+			<map-property name="timestamp" class="long" />
+			<map-property name="destination" class="string" />
+			<map-property name="source" class="string" />
+			<map-property name="sourcePort" class="long" />
+			<map-property name="destinationPort" class="long" />
+		</java-util-map>
+	</event-type>
+	<event-type name="cep.tcp.connection.duration">
+		<java-util-map>
+			<map-property name="startTimestamp" class="long" />
+			<map-property name="endTimestamp" class="long" />
+			<map-property name="duration" class="long" />
+			<map-property name="destination" class="string" />
+			<map-property name="source" class="string" />
+			<map-property name="sourcePort" class="long" />
+			<map-property name="destinationPort" class="long" />
+		</java-util-map>
+	</event-type>
+</esper-configuration>
