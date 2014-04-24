@@ -1,0 +1,3 @@
+<esper-configuration>
+	<event-type-auto-name package-name="com.fh.his.cep.stock.event"/>
+</esper-configuration>
