@@ -31,9 +31,9 @@ public class App {
 		conEvent.put("Tcp", "Tcp");
 		log.info("Creating sample statement");
 		engine.getEPAdministrator().getConfiguration().addEventType("sniffer.header.parsed", conEvent);
-		TCPCEInsertStatement.createStatement(engine.getEPAdministrator());
-		TCPCFStatement.createStatement(engine.getEPAdministrator());
-		TCPDurationStatement.createStatement(engine.getEPAdministrator());
+		//TCPCEInsertStatement.createStatement(engine.getEPAdministrator());
+		//TCPCFStatement.createStatement(engine.getEPAdministrator());
+		//TCPDurationStatement.createStatement(engine.getEPAdministrator());
 
 		reportStats();
 	}
