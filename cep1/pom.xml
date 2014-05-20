@@ -85,7 +85,7 @@
 				<artifactId>exec-maven-plugin</artifactId>  
 				<version>1.2.1</version>  
 				<configuration> 
-					<mainClass>com.fh.his.cep.stock.app.StockTickmain</mainClass>  
+					<mainClass>com.fh.his.cep.stock.app.StockTickMain</mainClass>  
 				</configuration> 
 			</plugin>  
 		</plugins>
